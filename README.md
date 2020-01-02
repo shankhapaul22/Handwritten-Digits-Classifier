@@ -10,3 +10,10 @@ Third, the features in an image don't have an obvious linear or nonlinear relati
 
 Deep neural networks have been used to reach state-of-the-art performance on image classification tasks in the last decade. 
 For some image classification tasks, deep neural networks actually perform as well as or slightly better than the human benchmark. Deep learning is effective in image classification because of the models' ability to learn hierarchical representations. At a high level, an effective deep learning model learns intermediate representations at each layer in the model and uses them in the prediction process.
+
+# Objective
+
+In this project, we'll:
+
+- explore image classification.
+- train, test, and improve a few different deep neural networks for image classification.
