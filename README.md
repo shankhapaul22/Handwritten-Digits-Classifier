@@ -17,3 +17,7 @@ In this project, we'll:
 
 - explore image classification.
 - train, test, and improve a few different deep neural networks for image classification.
+
+# Process
+
+
