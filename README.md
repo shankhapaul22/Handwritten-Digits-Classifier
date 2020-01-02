@@ -27,15 +27,15 @@ Scikit-learn contains a number of datasets pre-loaded with the library, within t
 
 Each image is represented as a row of pixel values. To visualize the image, we need to reshape these pixel values back into the 28 by 28 and plot them on a coordinate grid.
 
-The different models we attempted:
-- We used the K-nearest neighbors algorithm compares every unseen observation in the test set to all (or many, as some implementations constrain the search space) training observations to look for similar (or the "nearest") observations. Then, the algorithm finds the label with the most nearby observations and assigns that as the prediction for the unseen observation.
+The different models we attempt:
+- We use the K-nearest neighbors algorithm compares every unseen observation in the test set to all (or many, as some implementations constrain the search space) training observations to look for similar (or the "nearest") observations. Then, the algorithm finds the label with the most nearby observations and assigns that as the prediction for the unseen observation.
 
-- Then we used a neural network with a single hidden layer.
-- Then we used two hidden layers and continued to increase the number of neurons in each layer.
-- Lastly, we increased the number of folds we use for k-fold cross validation to 6 (originally we were using 4) while testing networks with 3 hidden layers.
+- Then we use a neural network with a single hidden layer.
+- Then we use two hidden layers and continued to increase the number of neurons in each layer.
+- Lastly, we increase the number of folds we use for k-fold cross validation to 6 (originally we were using 4) while testing networks with 3 hidden layers.
 
 # Results
 
-There were a few downsides to K-nearest neighbors including high memory usage and no model representation to debug. In the first two models of neural networks ( one hidden layer, two hidden layers), the accuracy was increasing as we included more neurons per layer, however there was little difference in accuracy between the models.
+There are a few downsides to K-nearest neighbors including high memory usage and no model representation to debug. In the first two models of neural networks ( one hidden layer, two hidden layers), the accuracy increases as we included more neurons per layer, however there is little difference in accuracy between the models.
 
-For our last model (three hidden layers with 6 K-Folds), the accuracy decreased but variance and chance of overfitting has decrease as well.
+For our last model (three hidden layers with 6 K-Folds), the accuracy decrease but variance and chance of overfitting decrease as well.
