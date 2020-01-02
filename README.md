@@ -8,6 +8,8 @@ Second, images are often downsampled to lower resolutions and transformed to gra
 
 Third, the features in an image don't have an obvious linear or nonlinear relationship that can be learned with a model like linear or logistic regression. In grayscale, each pixel is just represented as a brightness value ranging from 0 to 256.
 
+---
+
 Deep neural networks have been used to reach state-of-the-art performance on image classification tasks in the last decade. 
 For some image classification tasks, deep neural networks actually perform as well as or slightly better than the human benchmark. Deep learning is effective in image classification because of the models' ability to learn hierarchical representations. At a high level, an effective deep learning model learns intermediate representations at each layer in the model and uses them in the prediction process.
 
@@ -16,8 +18,24 @@ For some image classification tasks, deep neural networks actually perform as we
 In this project, we'll:
 
 - explore image classification.
+- observe the limitation of traditional machine learning.
 - train, test, and improve a few different deep neural networks for image classification.
 
 # Process
 
+Scikit-learn contains a number of datasets pre-loaded with the library, within the namespace of `sklearn.datasets`. The `load_digits()` function returns a copy of the hand-written digits dataset from UCI.
 
+Each image is represented as a row of pixel values. To visualize the image, we need to reshape these pixel values back into the 28 by 28 and plot them on a coordinate grid.
+
+The different models we attempted:
+- We used the K-nearest neighbors algorithm compares every unseen observation in the test set to all (or many, as some implementations constrain the search space) training observations to look for similar (or the "nearest") observations. Then, the algorithm finds the label with the most nearby observations and assigns that as the prediction for the unseen observation.
+
+- Then we used a neural network with a single hidden layer.
+- Then we used two hidden layers and continued to increase the number of neurons in each layer.
+- Lastly, we increased the number of folds we use for k-fold cross validation to 6 (originally we were using 4) while testing networks with 3 hidden layers.
+
+# Results
+
+There were a few downsides to K-nearest neighbors including high memory usage and no model representation to debug. In the first two models of neural networks ( one hidden layer, two hidden layers), the accuracy was increasing as we included more neurons per layer, however there was little difference in accuracy between the models.
+
+For our last model (three hidden layers with 6 K-Folds), the accuracy decreased but variance and chance of overfitting has decrease as well.
